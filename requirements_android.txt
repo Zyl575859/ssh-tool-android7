@@ -1,0 +1,8 @@
+# Android版本依赖
+kivy>=2.1.0
+paramiko>=2.9.0
+pyjnius>=1.3.0
+
+
+
+

@@ -1,0 +1,25 @@
+{
+  "玩家管理": {
+    "物品": {
+      "description": "",
+      "command": "additem",
+      "params": ""
+    },
+    "等级": {
+      "description": "",
+      "command": "addlevel",
+      "params": ""
+    },
+    "经验": {
+      "description": "",
+      "command": "addexp",
+      "params": ""
+    }
+  },
+  "物品管理": {},
+  "货币管理": {},
+  "等级经验": {},
+  "服务器管理": {},
+  "权限管理": {},
+  "世界管理": {}
+}

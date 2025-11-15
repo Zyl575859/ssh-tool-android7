@@ -1,0 +1,52 @@
+[
+  {
+    "name": "默认服务器 (manage)",
+    "host": "",
+    "port": 22,
+    "username": "manage",
+    "password": "Hg8RGgYNAzUADDsSBUFCbgYD",
+    "key_file": "",
+    "notes": "",
+    "last_connected": ""
+  },
+  {
+    "name": "43.240.73.182:22 (manage)",
+    "host": "43.240.73.182",
+    "port": 22,
+    "username": "manage",
+    "password": "Hg8RGgYNAzUADDsSBUFCbgYD",
+    "key_file": "",
+    "notes": "43.240.73.182:22 (manage)",
+    "last_connected": "2025-11-11 01:28:59"
+  },
+  {
+    "name": "用户: root",
+    "host": "",
+    "port": 22,
+    "username": "root",
+    "password": "",
+    "key_file": "",
+    "notes": "SSH登录用户: root",
+    "last_connected": ""
+  },
+  {
+    "name": "SSH登录用户: root",
+    "host": "114.66.33.55",
+    "port": 48213,
+    "username": "root",
+    "password": "M0VA7CCkhH8N",
+    "key_file": "",
+    "notes": "SSH登录用户: root",
+    "last_connected": "2025-11-15 10:05:17"
+  },
+  {
+    "name": "SSH登录用户: root",
+    "host": "43.136.40.36",
+    "port": 22,
+    "username": "root",
+    "password": "ABCD123456.",
+    "key_file": "",
+    "notes": "SSH登录用户: root",
+    "last_connected": "2025-11-11 18:58:51"
+  }
+]

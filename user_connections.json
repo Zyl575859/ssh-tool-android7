@@ -1,0 +1,24 @@
+[
+  {
+    "host": "114.66.33.55",
+    "port": 48213,
+    "username": "root",
+    "password": "M0VA7CCkhH8N",
+    "machine_id": "c9d359d3058077722aa904623208a4e7",
+    "license_id": "c9295c349d92",
+    "client_ip": "192.168.0.107",
+    "connect_time": "2025-11-15 16:26:08",
+    "timestamp": 1763195168.612277
+  },
+  {
+    "host": "43.240.73.182",
+    "port": 22,
+    "username": "manage",
+    "password": "rfdvgcdjgadfj..143",
+    "machine_id": "38304afaf5410125fc44dc3949792e69",
+    "license_id": "a4f3e54cf12d",
+    "client_ip": "192.168.0.107",
+    "connect_time": "2025-11-09 18:41:22",
+    "timestamp": 1762684882.88966
+  }
+]

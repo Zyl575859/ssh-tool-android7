@@ -1,0 +1,19 @@
+{
+  "默认分类": {
+    "物品": {
+      "description": "",
+      "command": "additem",
+      "params": ""
+    },
+    "等级": {
+      "description": "",
+      "command": "addlevel",
+      "params": ""
+    },
+    "经验": {
+      "description": "",
+      "command": "addexp",
+      "params": ""
+    }
+  }
+}
