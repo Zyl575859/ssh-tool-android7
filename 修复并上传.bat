@@ -22,12 +22,33 @@ if %errorlevel% neq 0 (
 echo [步骤1] 检查Git配置...
 git config user.name >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [配置] 需要配置Git用户信息
-    set /p git_name="请输入你的名字: "
-    set /p git_email="请输入你的邮箱: "
+    echo [配置] 需要配置Git用户信息（只需配置一次）
+    echo.
+    set /p git_name="请输入你的名字（例如: 张三）: "
+    if "!git_name!"=="" (
+        echo [错误] 名字不能为空
+        pause
+        exit /b 1
+    )
+    set /p git_email="请输入你的邮箱（例如: zhangsan@example.com）: "
+    if "!git_email!"=="" (
+        echo [错误] 邮箱不能为空
+        pause
+        exit /b 1
+    )
     git config --global user.name "!git_name!"
     git config --global user.email "!git_email!"
-    echo [OK] Git用户信息已配置
+    if %errorlevel% neq 0 (
+        echo [失败] 配置Git用户信息失败
+        pause
+        exit /b 1
+    )
+    echo [OK] Git用户信息已配置: !git_name! ^<!git_email!^>
+    echo.
+) else (
+    for /f "tokens=*" %%n in ('git config user.name') do set git_name=%%n
+    for /f "tokens=*" %%e in ('git config user.email') do set git_email=%%e
+    echo [OK] Git用户信息: !git_name! ^<!git_email!^>
     echo.
 )
 
@@ -50,17 +71,53 @@ if %errorlevel% neq 0 (
 echo [OK] 文件已添加
 echo.
 
+REM 检查是否有未提交的更改
+git diff --cached --quiet >nul 2>&1
+set has_staged=%errorlevel%
+
 REM 检查是否有提交
 git rev-parse --verify HEAD >nul 2>&1
-if %errorlevel% neq 0 (
-    echo [步骤4] 创建第一次提交...
+set has_commit=%errorlevel%
+
+if %has_staged% neq 0 (
+    echo [步骤4] 创建提交...
+    REM 再次确认用户信息已配置
+    git config user.name >nul 2>&1
+    if %errorlevel% neq 0 (
+        echo [错误] Git用户信息未配置，无法提交
+        echo 请重新运行脚本并输入用户信息
+        pause
+        exit /b 1
+    )
     git commit -m "初始提交"
     if %errorlevel% neq 0 (
-        echo [失败] 提交失败，可能没有配置用户信息
+        echo [失败] 提交失败
+        echo.
+        echo 可能的原因:
+        echo   1. Git用户信息未正确配置
+        echo   2. 没有文件需要提交
+        echo.
+        echo 请检查Git配置:
+        git config --list | findstr user
+        echo.
         pause
         exit /b 1
     )
     echo [OK] 提交完成
+    echo.
+) else if %has_commit% neq 0 (
+    echo [提示] 没有需要提交的文件，但也没有提交记录
+    echo [步骤4] 创建空提交...
+    git commit --allow-empty -m "初始提交"
+    if %errorlevel% neq 0 (
+        echo [失败] 创建提交失败
+        pause
+        exit /b 1
+    )
+    echo [OK] 提交完成
+    echo.
+) else (
+    echo [提示] 所有文件已提交，无需再次提交
     echo.
 )
 
