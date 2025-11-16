@@ -1,0 +1,42 @@
+========================================
+一键上传并构建 - 使用说明
+========================================
+
+【使用方法】
+
+双击运行: 一键上传并构建.bat
+
+【脚本会自动完成】
+
+1. ✅ 检查必需文件（main.py, buildozer.spec）
+2. ✅ 创建GitHub Actions配置（如果不存在）
+3. ✅ 初始化Git仓库（如果需要）
+4. ✅ 配置Git用户信息（如果需要）
+5. ✅ 添加并提交文件
+6. ✅ 配置远程仓库
+7. ✅ 上传代码到GitHub
+8. ✅ 自动打开GitHub Actions页面
+
+【需要你做的】
+
+1. 输入Git用户信息（首次需要）
+2. 在GitHub创建仓库（如果还没有）
+3. 输入GitHub仓库地址
+4. 输入GitHub用户名和Token（上传时）
+
+【获取GitHub Token】
+
+1. 访问: https://github.com/settings/tokens
+2. Generate new token (classic)
+3. 勾选 repo 权限
+4. 生成并复制token
+5. push时密码处输入token（不是GitHub密码）
+
+【上传后】
+
+1. 在GitHub Actions页面点击 "Run workflow"
+2. 等待构建完成（10-20分钟）
+3. 下载APK文件
+
+========================================
+
